@@ -1,15 +1,17 @@
 class BankAccount {
     balance: number
+    initialAmount: string
 
-    constructor(initialAmount: string) {
-        balance = initialAmount
+    constructor(initialAmount: string, balance: number) {
+        this.balance = balance
+        this.initialAmount = initialAmount
     }
 
     deposit(amount: number): number {
-        this.balance
-        return 0
+        this.balance = this.balance + amount
+        return this.balance
     }
 }
 
-const myAccount = new BankAccount(500)
+const myAccount = new BankAccount('sum',500)
 console.log(myAccount.deposit(100)) // After fixing: will print 600
